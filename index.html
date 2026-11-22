@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Resume<span>Analyzer</span></h1>
+            <p>Analyze your resume. Discover your potential.</p>
+        </header>
+
+        <main class="analyzer-card">
+            <h2>Analyze Your Resume</h2>
+            <p class="subtitle">
+                Upload your resume and select your desired job role.
+            </p>
+
+            <div class="form-group">
+                <label for="resume">Upload Resume (PDF or TXT)</label>
+                <input type="file" id="resume" accept=".pdf,.txt">
+            </div>
+
+            <div class="form-group">
+                <label for="role">Select Job Role</label>
+                <select id="role">
+                    <option value="web">Web Developer</option>
+                    <option value="frontend">Frontend Developer</option>
+                    <option value="backend">Backend Developer</option>
+                    <option value="python">Python Developer</option>
+                    <option value="java">Java Developer</option>
+                    <option value="data">Data Analyst</option>
+                    <option value="cyber">Cybersecurity Analyst</option>
+                </select>
+            </div>
+
+            <button id="analyzeBtn">Analyze Resume</button>
+
+            <p id="status"></p>
+
+            <section id="results" class="results hidden">
+                <h2>Analysis Results</h2>
+
+                <div class="score-box">
+                    <div class="score-circle">
+                        <span id="score">0%</span>
+                    </div>
+                    <h3>Resume Match Score</h3>
+                    <p id="feedback"></p>
+                </div>
+
+                <div class="result-section">
+                    <h3>Skills Found</h3>
+                    <div id="foundSkills" class="skills"></div>
+                </div>
+
+                <div class="result-section">
+                    <h3>Missing Skills</h3>
+                    <div id="missingSkills" class="skills"></div>
+                </div>
+
+                <div class="result-section">
+                    <h3>Suggestions to Improve</h3>
+                    <ul id="suggestions"></ul>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2026 Resume Analyzer | Built with HTML, CSS & JavaScript</p>
+        </footer>
+    </div>
+
+    <!-- PDF text extraction library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
